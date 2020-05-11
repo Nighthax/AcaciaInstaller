@@ -7,14 +7,14 @@ goto :Start
 
 :Start
 :: set title of application
-title Acacia Installer 5.0
+title Acacia Installer 5.0.1
 cls
 goto :AutoUpdate
 
 :AutoUpdate
 :: launch update website
 :: if you have an issue with this, just remove the "start" command and the website
-start https://acaciainstaller.weebly.com/5dot0update.html
+start https://acaciainstaller.weebly.com/5dot0dot1update.html
 echo The script will now launch a website to check if you are on the latest version of Acacia Installer
 echo Press any key to continue
 echo Nighthax/AcaciaInstaller is licensed under the GNU General Public License v2.0
@@ -141,5 +141,5 @@ pause
 :: / _\  / __) / _\  / __)(  ) / _\   (  )(  ( \/ ___)(_  _)/ _\ (  )  (  )  (  __)(  _ \
 ::/    \( (__ /    \( (__  )( /    \   )( /    /\___ \  )( /    \/ (_/\/ (_/\ ) _)  )   /
 ::\_/\_/ \___)\_/\_/ \___)(__)\_/\_/  (__)\_)__)(____/ (__)\_/\_/\____/\____/(____)(__\_)
-
+::Acacia Installer 5.0.1 by Acacia/Nighthax
 
