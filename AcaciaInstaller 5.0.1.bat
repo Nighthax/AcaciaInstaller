@@ -23,7 +23,7 @@ cls
 goto :FunctionPrompt
 
 :FunctionPrompt
-:: prompts user with actions, alerts user of Chocolatey requirement
+:: prompts user with actions, alerts user of Chocolatey requirement,  describes license
 Color 40
 cls
 echo.
@@ -33,11 +33,18 @@ echo Acacia Installer is not responsible for any damage caused by using Chocolat
 echo If you have any issue that is not directly related to this script, ask Chocolatey for help, not us.
 echo 1. Install Chocolatey
 echo 2. Update and install programs
+echo 3. Help - Official Website
 echo.
-choice /C 12 /M "Enter your choice:"
+choice /C 123 /M "Enter your choice:"
 :: Note - list ERRORLEVELS in decreasing order
+if errorlevel 3 goto :helpsite
 if errorlevel 2 goto :installconfirmation
 if errorlevel 1 goto :chocolateyinstallerprompt
+
+:helpsite
+start https://github.com/Nighthax/AcaciaInstaller
+pause
+goto :FunctionPrompt
 
 :chocolateyinstallerprompt
 color 40
@@ -108,7 +115,7 @@ echo Installing Example1
 echo process started at %date% %time%
 choco upgrade SOFTWARE GOES HERE CHANGE THIS -y
 goto :Done
-:: Keep the "-y" part
+:: Keep the "choco upgrade" and "-y" part
 
 :Example2
 ::Tells the software to update Example 2's list of software
@@ -119,7 +126,7 @@ echo Installing Example2
 echo process started at %date% %time%
 choco upgrade SOFTWARE GOES HERE CHANGE THIS -y
 goto :Done
-:: Keep the "-y" part
+:: Keep the "choco upgrade" and "-y" part
 
 :Done
 ::Stop the application
